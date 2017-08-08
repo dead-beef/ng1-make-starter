@@ -1,0 +1,21 @@
+<div layout="column" layout-gt-sm="row"
+     layout-align="center center" layout-padding layout-margin
+     ng-controller="Page1Controller"
+		 md-colors="{background: '{{color.background}}-100', color: '{{color.foreground}}'}">
+	<md-input-container layout-fill flex>
+		<label>Background</label>
+		<md-select ng-model="color.background">
+			<md-option ng-repeat="color in colors" ng-value="color">
+				{{ color }}
+			</md-option>
+		</md-select>
+	</md-input-container>
+	<md-input-container layout-fill flex>
+		<label>Foreground</label>
+		<md-select ng-model="color.foreground">
+			<md-option ng-repeat="color in colors" ng-value="color">
+				{{ color }}
+			</md-option>
+		</md-select>
+	</md-input-container>
+</div>
