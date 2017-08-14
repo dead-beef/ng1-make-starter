@@ -79,6 +79,7 @@ make lint
 
 ```bash
 make start
+make SERVER_IP=192.168.1.10 SERVER_PORT=1080 start
 make stop
 ```
 
