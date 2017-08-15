@@ -12,7 +12,7 @@ LIB_NAME = vendor
 LIB_FONT_DIRS := node_modules/material-design-icons-iconfont/dist/fonts \
                  node_modules/roboto-fontface/fonts/roboto
 LIB_FONT_DIST_DIRS := material-icons roboto
-LIB_FONT_TYPES = %.otf %.eot %.ttf %.woff %.woff2 %.svg
+LIB_FONT_TYPES = %.otf %.eot %.ttf %.woff %.woff2
 
 HTML_DIRS = $(APP_DIR)/views
 HTML_FILES := $(foreach d,$(HTML_DIRS),$(call rwildcard,$d/,*.html))
