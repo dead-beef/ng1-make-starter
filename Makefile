@@ -51,7 +51,9 @@ endif
 
 JS_FILES := $(call uniq,$(JS_FILES))
 JS_FILES := $(filter-out $(JS_IGNORE),$(JS_FILES))
+ifneq "$(strip $(JS_FILES))" ""
 JS_FILES := $(APP_DIR)/umd/umd-start.js $(JS_FILES) $(APP_DIR)/umd/umd-end.js
+endif
 
 ifeq "$(strip $(CSS_TYPE))" "css"
 	CSS_TYPE =
@@ -331,16 +333,12 @@ $(LIB_JS): $(LIB_JS_FILES) | $(BUILD_DIR)
 endif
 
 ifneq "$(strip $(APP_JS))" ""
-
+$(APP_JS): $(JS_FILES) | $(BUILD_DIR)
 ifneq "$(strip $(LINT_ENABLED))" ""
-$(APP_JS):: $(JS_FILES)
 	$(call prefix,[js-lint]  ,$(LINT) $?)
 endif
-
-$(APP_JS):: $(JS_FILES) | $(BUILD_DIR)
 	$(call prefix,[js-cat]   ,$(CAT) $^ >$@.tmp)
 	$(call prefix,[js-cat]   ,$(MV) $@.tmp $@)
-
 endif
 
 $(eval $(call make-copy-target,$(BUILD_COPY),$(APP_DIR),$(DIST_DIR)))
