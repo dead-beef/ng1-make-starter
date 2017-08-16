@@ -1,6 +1,6 @@
 'use strict';
 
-exports.info = angular.module(APP_NAME + '.info', [])
+angular.module(APP_NAME + '.info', [])
 	.constant('version', '1.0')
 	.constant('languages', ['en', 'ru'])
 	.constant('defaultLanguage', 'en')

@@ -1,6 +1,6 @@
 'use strict';
 
-exports.translate.directive('languageSelect', function() {
+translate.directive('languageSelect', function() {
 	return {
 		restrict: 'E',
 		replace: true,
@@ -10,7 +10,7 @@ exports.translate.directive('languageSelect', function() {
 	};
 });
 
-exports.translate.directive('languageMenu', function() {
+translate.directive('languageMenu', function() {
 	return {
 		restrict: 'E',
 		replace: true,
@@ -20,7 +20,7 @@ exports.translate.directive('languageMenu', function() {
 	};
 });
 
-exports.translate.controller(
+translate.controller(
 	'LanguageController',
 	[
 		'$translate', '$scope', 'languages',

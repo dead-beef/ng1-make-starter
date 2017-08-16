@@ -1,6 +1,6 @@
 'use strict';
 
-exports.stateData = angular
+angular
 	.module(APP_NAME + '.stateData', ['ui.router'])
 	.run(['$transitions', '$rootScope', function($transitions, $rootScope) {
 		$transitions.onSuccess({}, function(transition) {

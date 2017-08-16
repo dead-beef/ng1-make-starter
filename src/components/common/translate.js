@@ -1,6 +1,7 @@
 'use strict';
 
-exports.translate = angular
+// eslint-disable-next-line no-unused-vars
+var translate = angular
 	.module(
 		APP_NAME + '.translate',
 		[

@@ -57,7 +57,7 @@ APP_RUN.push(function() {
 });
 
 // eslint-disable-next-line no-unused-vars
-var app = exports.main = angular
+var app = angular
 	.module(APP_NAME, APP_DEPS)
 	.config(APP_CONFIG)
 	.run(APP_RUN);

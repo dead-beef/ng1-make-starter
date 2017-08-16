@@ -38,6 +38,7 @@
 		"$": true,
 		"angular": true,
 		"app": true,
+		"translate": true,
 		"APP_NAME": true,
 		"APP_DEPS": true,
 		"TESTING": true
