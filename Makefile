@@ -188,9 +188,11 @@ ifeq "$(strip $(LIBRARY))" ""
 endif
 endif
 
-rebuild: clean all
+rebuild: clean
+	$(RESET_MAKE)
 
-rebuild-min: clean min
+rebuild-min: clean
+	$(RESET_MAKE) min
 
 clean:
 	$(call prefix,[clean]    ,$(RM) $(BUILD_DIR)/* $(DIST_DIR)/*)
