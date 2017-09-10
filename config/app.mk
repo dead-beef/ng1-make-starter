@@ -5,6 +5,7 @@ APP_NAME = app
 
 APP_DIR = src
 BUILD_DIR = build
+BUILD_TMPL_DIR := $(BUILD_DIR)/_tmpl
 MIN_DIR := $(BUILD_DIR)/min
 DIST_DIR = dist
 
