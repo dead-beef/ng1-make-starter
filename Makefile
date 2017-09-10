@@ -143,7 +143,7 @@ else
 BUILD_FILES += $(LIB_JS) $(LIB_CSS) $(APP_JS) $(APP_CSS) $(APP_HTML)
 endif
 BUILD_FILES_MIN := $(BUILD_FILES:$(BUILD_DIR)%=$(MIN_DIR)%)
-DIST_FILES:= $(BUILD_FILES:$(BUILD_DIR)%=$(DIST_DIR)%)
+DIST_FILES := $(BUILD_FILES:$(BUILD_DIR)%=$(DIST_DIR)%)
 
 WATCH_FILES := '$(APP_DIR)/**/*' 'config/*' Makefile package.json
 
@@ -297,7 +297,7 @@ print-targets-header:
 #--------
 
 node_modules:
-	$(call prefix,[install]  ,$(MAKE) install)
+	$(call prefix,[install]  ,$(RESET_MAKE) install)
 
 $(APP_OUT_DIRS):
 	$(call prefix,[mkdirs]   ,$(MKDIR) $@)
