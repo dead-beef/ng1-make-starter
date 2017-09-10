@@ -390,9 +390,7 @@ endif
 endif
 
 $(eval $(call make-copy-target,$(BUILD_COPY),$(APP_DIR),$(DIST_DIR)))
-$(eval $(call make-copy-target,$(BUILD_COPY_JS),$(APP_DIR),$(BUILD_DIR)))
-$(eval $(call make-copy-target,$(BUILD_COPY_CSS),$(APP_DIR),$(BUILD_DIR)))
-$(eval $(call make-copy-target,$(BUILD_COPY_HTML),$(APP_DIR),$(BUILD_DIR)))
+$(eval $(call make-copy-target,$(BUILD_COPY_DIST),$(APP_DIR),$(BUILD_DIR)))
 
 #--------
 
