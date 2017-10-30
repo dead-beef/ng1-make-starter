@@ -22,7 +22,7 @@ A starter kit for standalone Angular 1 application based on NodeJS and Make.
   * `./config/os.mk` - shell commands
   * `./config/app.mk` - variables
   * `./config/deps.mk` - custom targets/dependencies
-  * `./config/main-files.js` - override dependency main files
+  * `./config/override.js` - override dependency package.json
 
 ## Requirements
 
