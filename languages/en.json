@@ -1,7 +1,1 @@
-{
-	"app.title": "Application Title",
-	"app.brief": "Brief description for the application",
-	"nav.header": "Angular 1 application starter kit",
-	"nav.header.short": "Angular 1",
-	"settings.language": "Language"
-}
+{"app.title":"Application Title","app.brief":"Brief description for the application","nav.header":"Angular 1 application starter kit","nav.header.short":"Angular 1","settings.language":"Language"}
