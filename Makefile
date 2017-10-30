@@ -313,6 +313,13 @@ $(MIN_DIR)/%.html: $(BUILD_DIR)/%.html | $(APP_OUT_DIRS)
 	$(call prefix,[min-tmpl] ,$(MINHTML) $< -o $@.tmp)
 	$(call prefix,[min-tmpl] ,$(MV) $@.tmp $@)
 
+$(BUILD_DIR)/%.min.css: $(BUILD_DIR)/%.css | $(MIN_DIR)
+	$(call prefix,[min-css]  ,$(MINCSS) -i $< -o $@)
+
+$(BUILD_DIR)/%.min.js: $(BUILD_DIR)/%.js | $(MIN_DIR)
+	$(call prefix,[min-js]   ,$(MINJS) $< -c -m >$@.tmp)
+	$(call prefix,[min-js]   ,$(MV) $@.tmp $@)
+
 $(BUILD_TMPL_DIR)/%.html: %.html
 ifeq "$(strip $(LIBRARY))" ""
 	$(call prefix,[tmpl]     ,$(MKDIR) $(@D))
@@ -395,7 +402,7 @@ $(eval $(call make-copy-target,$(BUILD_COPY_DIST),$(APP_DIR),$(BUILD_DIR)))
 #--------
 
 ifneq "$(MAKECMDGOALS)" "install"
-$(VARS_FILE): package.json config/make-vars.js config/main-files.js | $(BUILD_DIR) $(MAKE_VARS) node_modules
+$(VARS_FILE): package.json config/make-vars.js config/override.js | $(BUILD_DIR) $(MAKE_VARS) node_modules
 	$(call prefix,[vars]     ,$(MAKE_VARS_CMD) >$@.tmp)
 	$(call prefix,[vars]     ,$(MV) $@.tmp $@)
 endif
