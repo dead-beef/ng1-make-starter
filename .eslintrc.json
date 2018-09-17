@@ -16,7 +16,8 @@
 	"rules": {
 		"indent": [
 			"warn",
-			"tab"
+			"tab",
+			{ "SwitchCase": 1 }
 		],
 		"linebreak-style": [
 			"error",
@@ -37,10 +38,16 @@
 	"globals": {
 		"$": true,
 		"angular": true,
+		"Materialize": true,
+		"Waves": true,
+		"ImgCache": true,
+		"L": true,
+		"cordova": true,
 		"app": true,
-		"translate": true,
 		"APP_NAME": true,
 		"APP_DEPS": true,
-		"TESTING": true
+		"TESTING": true,
+		"MOCK_BACKEND": true,
+		"backend": true
 	}
 }
