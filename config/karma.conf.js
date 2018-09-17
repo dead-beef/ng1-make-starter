@@ -1,7 +1,5 @@
 module.exports = (config) => {
 	const fs = require('fs');
-	const rootRequire = require('root-require');
-	const packageJson = rootRequire('package.json');
 
 	let library = false;
 
@@ -11,48 +9,48 @@ module.exports = (config) => {
 		library = true;
 	}
 
-	let files = [ vendor ];
-
-	if(packageJson.dependencies.jquery !== undefined) {
-		files.push({
+	let files = [
+		vendor,
+		{
 			pattern: require.resolve('jasmine-jquery'),
 			watched: false,
 			served: true
-		});
-	}
-
-	files.push({
-		pattern: require.resolve('angular-mocks'),
-		watched: false,
-		served: true
-	});
+		},
+		/*{
+			pattern: require.resolve('angular-mocks'),
+			watched: false,
+			served: true
+		}*/
+	];
 
 	let prefix;
 
 	if(process.env.TEST_BUNDLE && !/^\s*$/.test(process.env.TEST_BUNDLE)) {
-		files.push('./src/vars.js');
-		files.push('./dist/js/*.js');
+		files.push(
+			'./src/vars.js',
+			'./dist/js/*.js'
+		);
 		if(!library) {
 			files.push('./dist/tmpl/*.html');
 		}
 		prefix = 'dist/tmpl/';
 	}
 	else {
-		files.push.apply(files, [
+		files.push(
 			'./tests/test-start.js',
 			'./src/vars.js',
 			'./src/main.js',
-			'./src/components/**/*.js',
-		]);
+			'./src/components/**/*.js'
+		);
 
 		if(library) {
 			files.push('./build/templates.js');
 		}
 		else {
-			files.push.apply(files, [
+			files.push(
 				'./src/views/**/*.js',
 				'./src/views/**/*.html'
-			]);
+			);
 		}
 
 		prefix = 'src/';
@@ -63,7 +61,7 @@ module.exports = (config) => {
 		browsers = browsers.split(/\s+/);
 	}
 	if(!(browsers && browsers[0])) {
-		browsers = ['Firefox'];
+		browsers = ['Chromium'];
 	}
 
 	files.push('./tests/**/*.test.js');
@@ -87,7 +85,7 @@ module.exports = (config) => {
 		reporters: ['spec'],
 		specReporter: {
 			maxLogLines: 5,
-			suppressErrorSummary: true,
+			suppressErrorSummary: false,
 			suppressFailed: false,
 			suppressPassed: false,
 			suppressSkipped: true,
