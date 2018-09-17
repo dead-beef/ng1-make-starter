@@ -19,6 +19,7 @@
     "angular-materialize": "^0.2.2",
     "angular-messages": "^1.6.6",
     "angular-mocks": "^1.6.8",
+    "angular-sanitize": "^1.6.9",
     "angular-translate": "^2.17.0",
     "angular-translate-loader-static-files": "^2.17.0",
     "angular-translate-storage-cookie": "^2.17.0",
@@ -35,6 +36,7 @@
     "chokidar-cli": "^1.2.0",
     "csso-cli": "^1.0.0",
     "eslint": "^4.16.0",
+    "font-awesome": "^4.7.0",
     "glob": "^7.1.2",
     "html-minifier": "^3.5.8",
     "http-server": "^0.11.1",
@@ -53,6 +55,7 @@
     "postcss-cli": "^4.1.1",
     "protractor": "^5.2.2",
     "sass-makedepend": "^0.2.1",
+    "slm-cli": "^0.1.0",
     "source-map-concat-cli": "^1.0.0",
     "uglify-js": "^3.3.8"
   },
